@@ -1,2 +1,2 @@
-<body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
+<body class="hold-transition layout-top-nav">
+  <div class="wrapper">
