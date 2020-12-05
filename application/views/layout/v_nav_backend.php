@@ -42,7 +42,7 @@
           </li>
           <li class="nav-item">
             <a href="<?= base_url('barang')?>" class="nav-link <?php if($this->uri->segment(1) == 'barang') echo 'active';?>"> 
-              <i class="nav-icon fas fa-list"></i>
+              <i class="nav-icon fas fa-cubes"></i>
               <p>
                 Barang
               </p>
