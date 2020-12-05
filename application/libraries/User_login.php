@@ -31,6 +31,21 @@ class User_login{
 
      }
  }
+
+ public function proteksi_halaman(){
+    if($this->ci->session->userdata('username') == ''){
+      $this->ci->session->set_flashdata('error', 'Anda belum login');
+      redirect('auth/login_user');
+    }
+ }
+
+ public function logout(){
+  $this->ci->session->set_userdata('username');
+  $this->ci->session->set_userdata('nama_user');
+  $this->ci->session->set_userdata('password');
+  $this->ci->session->set_flashdata('pesan', 'Anda berhasil logout');
+  redirect('auth/login_user');
+ }
 }
 
 ?>

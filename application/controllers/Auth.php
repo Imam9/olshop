@@ -20,14 +20,17 @@ class Auth extends CI_Controller{
      
      $cek = $this->user_login->login($username, $password);
    
-    }else{
-      $data = array(
-        'title' => 'Login User',
-      );
-
-      $this->load->view('v_login_user', $data, FALSE);
     }
+    $data = array(
+      'title' => 'Login User',
+    );
+
+    $this->load->view('v_login_user', $data, FALSE);
     
+  }
+
+  public function logout_user(){
+    $this->user_login->logout();
   }
 }
 
