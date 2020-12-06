@@ -6,6 +6,20 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
+      <?php 
+        echo validation_errors('<div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h5><i class="icon fas fa-info"></i>', '</h5></div>');
+
+
+        if(isset($error_upload)){
+          echo '<div class="alert alert-danger alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <h5><i class="icon fas fa-info"></i>';
+          echo $error_upload;
+          echo '</h5></div>';
+        }
+      ?>
       <form method = "POST" action = "" enctype="multipart/form-data">
         <div class="form-group">
           <label>Nama Barang</label>
@@ -36,8 +50,15 @@
         </div>
         <div class="form-group">
           <label>Gambar</label>
-          <input type="file" name = "gambar" class="form-control" value = "<?= set_value('gambar')?>">
+          <input type="file" name = "gambar" class="form-control" id="preview_gambar" value = "<?= set_value('gambar')?>" required>
         </div>
+        <div class="form-group">
+          <label>priview</label>
+          <br>
+          <img src="<?= base_url('assets/gambar/no_foto.jpg')?>" id="gambar_load" alt="no_foto" width = "20%">
+        </div>
+      
+        
         <div class="form-group text-right">
           <button type = "submit" class = "btn btn-primary">Simpan</button>
           <a href="<?= base_url('barang')?>" class = "btn btn-danger">Kembali</a>
@@ -46,3 +67,20 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  function bacaGambar(input){
+    if(input.files && input.files[0]){
+      var reader = new FileReader();
+      reader.onload = function(e){
+        $('#gambar_load').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $("#preview_gambar").change(function(){
+    bacaGambar(this);
+  });
+
+</script>
