@@ -22,7 +22,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?= base_url('template')?>/index2.html"><b>Toko</b>Online</a>
+    <a href="<?= base_url('home')?>"><b>Toko</b>Online</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">

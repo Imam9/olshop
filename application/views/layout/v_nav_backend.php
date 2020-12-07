@@ -25,7 +25,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item" >
-            <a href="#" class="nav-link <?php if($this->uri->segment(1) == 'dashboard') echo 'active';?>">
+            <a href="<?= base_url('admin')?>" class="nav-link <?php if($this->uri->segment(1) == 'admin') echo 'active';?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -45,6 +45,14 @@
               <i class="nav-icon fas fa-cubes"></i>
               <p>
                 Barang
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url('gambarbarang')?>" class="nav-link <?php if($this->uri->segment(1) == 'gambarbarang') echo 'active';?>"> 
+              <i class="nav-icon fas fa-images"></i>
+              <p>
+                Gambar Barang
               </p>
             </a>
           </li>
