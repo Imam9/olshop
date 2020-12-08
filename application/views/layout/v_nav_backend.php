@@ -56,7 +56,15 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
+          <li class="nav-item">
+            <a href="<?= base_url('admin/setting')?>" class="nav-link <?php if($this->uri->segment(2) == 'setting') echo 'active';?>"> 
+              <i class="nav-icon fas fa-asterisk"></i>
+              <p>
+                Setting
+              </p>
+            </a>
+          </li>
+          <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
               <p>
@@ -78,7 +86,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="<?= base_url('user')?>" class="nav-link <?php if($this->uri->segment(1) == 'user') echo 'active';?>">
               <i class="nav-icon fas fa-user"></i>

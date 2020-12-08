@@ -10,12 +10,16 @@ class Belanja extends CI_Controller{
 
     
   public function index(){
-    //   $data = array(
-    //       'title' => 'Dashboard',
-    //       'total_barang' => $this->m_admin->total_barang(),
-    //       'isi' => 'v_admin'
-    //   );
-    //   $this->load->view('layout/v_wrapper_backend', $data, FALSE);
+
+    if(empty($this->cart->contents())){
+      redirect('home');
+    }
+      $data = array(
+          'title' => 'Keranjang Belanja',
+          // 'total_barang' => $this->m_admin->total_barang(),
+          'isi' => 'v_belanja'
+      );
+      $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
   }
 
   public function add(){
@@ -29,6 +33,31 @@ class Belanja extends CI_Controller{
     $this->cart->insert($data);
 
     redirect($redirect_page , 'refresh');
+  }
+
+  public function delete($rowid){
+
+    $this->cart->remove($rowid);
+    redirect('belanja');
+  }
+
+  public function update(){
+    
+    $i = 1;
+    foreach ($this->cart->contents() as $items){
+      $data = array(
+        'rowid' => $items['rowid'],
+        'qty'   => $this->input->post($i.'[qty]'),
+      );
+      $this->cart->update($data);
+      $i++;
+    }
+    redirect('belanja');
+  }
+
+  public function clear(){
+    $this->cart->destroy();
+    redirect('belanja');
   }
 }
 

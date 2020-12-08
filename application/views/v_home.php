@@ -43,8 +43,6 @@
         echo form_hidden('price', $value->harga);
         echo form_hidden('name', $value->nama_barang);
         echo form_hidden('redirect_page', str_replace('index.php/','', current_url()));
-        
-        
         ?>
         <div class="card bg-light">
           <div class="card-header text-muted border-bottom-0">
@@ -68,7 +66,7 @@
                   <a href="<?= base_url('home/detail_barang/').$value->id_barang?>" class="btn btn-sm bg-teal">
                     <i class="fas fa-eye"></i>
                   </a>
-                  <button class="btn btn-sm btn-primary swalDefaultSuccess">
+                  <button type = "submit" class="btn btn-sm btn-primary swalDefaultSuccess">
                     <i class="fas fa-cart-plus"></i> Add
                   </button>
                 </div>

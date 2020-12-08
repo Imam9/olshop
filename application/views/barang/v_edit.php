@@ -21,10 +21,21 @@
         }
       ?>
       <form method = "POST" action = "<?= base_url('barang/edit/'.$barang->id_barang)?>" enctype="multipart/form-data">
-        <div class="form-group">
-          <label>Nama Barang</label>
-          <input type="text" name = "nama_barang" class="form-control" placeholder="Nama Barang" value = "<?= $barang->nama_barang?>">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Nama Barang</label>
+              <input type="text" name = "nama_barang" class="form-control" placeholder="Nama Barang" value = "<?= $barang->nama_barang?>">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Berat Barang (Gram) </label>
+              <input type="number" name = "berat" class="form-control" placeholder="Berat dalam satuan gram" value = "<?= $barang->berat?>">
+            </div>
         </div>
+        </div>
+        
         <div class="row"> 
           <div class="col-sm-6">
             <div class="form-group">

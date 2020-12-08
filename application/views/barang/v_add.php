@@ -21,9 +21,19 @@
         }
       ?>
       <form method = "POST" action = "<?= base_url('barang/add') ?>" enctype="multipart/form-data">
-        <div class="form-group">
-          <label>Nama Barang</label>
-          <input type="text" name = "nama_barang" class="form-control" placeholder="Nama Barang" value = "<?= set_value('nama_barang')?>">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Nama Barang</label>
+              <input type="text" name = "nama_barang" class="form-control" placeholder="Nama Barang" value = "<?= set_value('nama_barang')?>">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Berat Barang (Gram) </label>
+              <input type="number" name = "berat" class="form-control" placeholder="Berat dalam satuan gram" value = "<?= set_value('berat')?>">
+            </div>
+          </div>
         </div>
         <div class="row"> 
           <div class="col-sm-6">
