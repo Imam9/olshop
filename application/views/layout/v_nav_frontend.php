@@ -36,12 +36,32 @@
       <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
         <!-- Messages Dropdown Menu -->
         <li class="nav-item">
+          <?php if( $this->session->userdata('email') == ""){?>
+            <a class="nav-link" href="<?= base_url('pelanggan/login')?>">
+              <span class="brand-text font-weight-light">Login / Register</span>
+              <img src="<?= base_url('template/dist/img/user1-128x128.jpg')?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                  style="opacity: .8">
+            </a>
+         <?php }else{ ?>
           <a class="nav-link" data-toggle="dropdown" href="#">
-            <span class="brand-text font-weight-light">pelanggan</span>
-            <img src="<?= base_url('template') ?>/dist/img/user1-128x128.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            <span class="brand-text font-weight-light"><?=  $this->session->userdata('nama_pelanggan')?></span>
+            <img src="<?= base_url('assets/foto/'.$this->session->userdata('foto'))?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                 style="opacity: .8">
           </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <div class="dropdown-divider"></div>
+              <a href="<?= base_url('pelanggan/akun')?>" class = "dropdown-item">
+                <i class="fas fa-user mr-2"></i>Akun Saya
+              </a>
+            <div class="dropdown-divider"></div>
+              <a href="#" class = "dropdown-item">
+                <i class="fas fa-shopping-cart mr-2"></i>Pesananana Saya
+              </a>
+            <div class="dropdown-divider"></div>
+            <a href="<?= base_url('pelanggan/logout')?>" class = "dropdown-item dropdown-footer">Log Out</a>
+          </div>
         </li>
+        <?php } ?>
         <?php $keranjang =  $this->cart->contents();
         $jml_item = 0;
         foreach($keranjang as $key=>$value){

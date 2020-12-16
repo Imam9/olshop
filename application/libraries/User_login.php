@@ -12,24 +12,24 @@ class User_login{
 
 
  public function login($username, $password){
-     $cek = $this->ci->m_auth->login_user($username, $password);
- 
-     if($cek){
-     
-        $nama_user =  $cek->nama_user;
-        $username = $cek->username;
-        $level_user = $cek->level_user;
+    $cek = $this->ci->m_auth->login_user($username, $password);
 
-        $this->ci->session->set_userdata('username', $username);
-        $this->ci->session->set_userdata('nama_user', $nama_user);
-        $this->ci->session->set_userdata('password', $password);
+    if($cek){
+    
+      $nama_user =  $cek->nama_user;
+      $username = $cek->username;
+      $level_user = $cek->level_user;
 
-        redirect('admin');
-     }else{
-      $this->ci->session->set_flashdata('error', 'Username Atau Password salah');
-      redirect('auth/login_user');
+      $this->ci->session->set_userdata('username', $username);
+      $this->ci->session->set_userdata('nama_user', $nama_user);
+      $this->ci->session->set_userdata('password', $password);
 
-     }
+      redirect('admin');
+    }else{
+    $this->ci->session->set_flashdata('error', 'Username Atau Password salah');
+    redirect('auth/login_user');
+
+    }
  }
 
  public function proteksi_halaman(){
