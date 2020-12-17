@@ -54,7 +54,7 @@
             <div class="col-md-8">
               <button type = "submit" class = "btn btn-sm btn-warning mb-3"><i class="fa fa-edit"></i> Update Keranjang</button>
               <a href = "<?= base_url('belanja/clear')?>" class = "btn btn-sm btn-danger mb-3"><i class="fa fa-recycle"></i> Clear Keranjang</a>
-              <a href = "#" class = "btn btn-sm btn-info mb-3"><i class="fa fa-save"></i> Check Out</a>
+              <a href = "<?= base_url('belanja/cekout')?>" class = "btn btn-sm btn-info mb-3"><i class="fa fa-save"></i> Check Out</a>
             </div>
             <?php echo form_close();?>         
           </div>
