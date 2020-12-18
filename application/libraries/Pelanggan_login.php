@@ -19,11 +19,13 @@ class Pelanggan_login{
       $nama_pelanggan =  $cek->nama_pelanggan;
       $email = $cek->email;
       $foto = $cek->foto;
+      $id_pelanggan = $cek->id_pelanggan;
   
       $this->ci->session->set_userdata('email', $email);
       $this->ci->session->set_userdata('foto', $foto);
       $this->ci->session->set_userdata('nama_pelanggan', $nama_pelanggan);
       $this->ci->session->set_userdata('password', $password);
+      $this->ci->session->set_userdata('id_pelanggan', $id_pelanggan);
 
       redirect('home');
     }else{
@@ -44,6 +46,7 @@ class Pelanggan_login{
   $this->ci->session->set_userdata('nama_pelanggan');
   $this->ci->session->set_userdata('email');
   $this->ci->session->set_userdata('foto');
+  $this->ci->session->set_userdata('id_pelanggan');
   $this->ci->session->set_flashdata('pesan', 'Anda berhasil logout');
   redirect('pelanggan/login');
  }

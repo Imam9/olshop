@@ -54,7 +54,7 @@
                 <i class="fas fa-user mr-2"></i>Akun Saya
               </a>
             <div class="dropdown-divider"></div>
-              <a href="#" class = "dropdown-item">
+              <a href="<?= base_url('pesanan_saya')?>" class = "dropdown-item">
                 <i class="fas fa-shopping-cart mr-2"></i>Pesananana Saya
               </a>
             <div class="dropdown-divider"></div>
@@ -110,7 +110,7 @@
                 </div>
               </a>
               <a href="<?= base_url('belanja')?>" class="dropdown-item dropdown-footer">View Chart</a>
-              <a href="#" class="dropdown-item dropdown-footer">Check Out</a>
+              <a href="<?= base_url('belanja/cekout')?>" class="dropdown-item dropdown-footer">Check Out</a>
               <?php } ?>            
           </div>
         </li>
