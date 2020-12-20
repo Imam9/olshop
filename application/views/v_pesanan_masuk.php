@@ -99,17 +99,14 @@
                         </td> 
                       <td>Rp. <?= number_format($value->total_bayar, 0)?>
                         <br>
-                        <?php if($value->status_bayar == '0') { ?>
-                          <span class="badge badge-warning">Belum Bayar</span>
-                        <?php }else{?>
-                          <span class="badge badge-success">Sudah Bayar</span><br>
-                          <span class="badge badge-info">Menunggu Verifikasi</span>
-                        <?php }?>
+                          <span class="badge badge-info">Dikemas/Dikirim</span>
+                      
+            
+                      
                       </td>  
                       <td>
                       <?php if($value->status_bayar == '1') { ?>
-                        <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#cek<?= $value->id_transaksi ?>">Bukti Bayar</button>
-                        <a href="<?= base_url('admin/proses/'.$value->id_transaksi)?>" class = "btn btn-sm btn-success ">Proses</a>
+                        <a href="<?= base_url('admin/kirim/'.$value->id_transaksi)?>" class = "btn btn-sm btn-success "><i class = "fa fa-paper-plane"></i> Dikirim</a>
                       <?php }else{?>
                         <!-- <a href="#" class = "btn btn-sm btn-info btn-flat">Sudah Bayar</a> -->
                         <?php }?>

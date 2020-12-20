@@ -64,7 +64,7 @@
                       <?php if($value->status_bayar == '0') { ?>
                         <a href="<?= base_url('pesanan_saya/bayar/'.$value->id_transaksi)?>" class = "btn btn-sm btn-success btn-flat">Bayar</a>
                       <?php }else{?>
-                        <a href="#" class = "btn btn-sm btn-info btn-flat">Sudah Bayar</a>
+                        <a href="#" class = "badge badge-info badge-lg">Sudah Bayar</a>
                         <?php }?>
                       </td>
                     </tbody>
@@ -74,7 +74,33 @@
                </div>
             </div>
             <div class="tab-pane fade" id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
-                Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam. 
+              <table class="table table-hover">
+              <thead>
+                <th>No</th>
+                <th>No Order</th>
+                <th>Tanggal </th>
+                <th>Expedisi</th>
+                <th>Total Bayar</th>
+              </thead>
+              <?php $no =1; foreach($diproses as $blm => $value){?>
+              <tbody>
+                <td><?= $no++?></td>
+                <td><?= $value->no_order?></td> 
+                <td><?= $value->tgl_order?></td> 
+                <td>Expedisi : <?= $value->expedisi?>
+                    <br>
+                    Paket : <?= $value->paket?>
+                    <br>
+                    Ongkir : <?= $value->ongkir?> 
+                  </td> 
+                <td>Rp. <?= number_format($value->total_bayar, 0)?>
+                  <br>
+                    <span class="badge badge-info">Tereverifikasi</span><br>
+                    <span class="badge badge-success">Dikemas / Dikirim</span>
+                </td>  
+              </tbody>
+              <?php } ?>
+              </table>
             </div>
             <div class="tab-pane fade" id="custom-tabs-four-messages" role="tabpanel" aria-labelledby="custom-tabs-four-messages-tab">
                 Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna. 
